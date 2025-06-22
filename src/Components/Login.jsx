@@ -11,17 +11,20 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        RegisterNo,
-        RollNo,
-      });
+      const response = await axios.post(
+        "https://gpa-cgpa-backends.onrender.com",
+        {
+          RegisterNo,
+          RollNo,
+        }
+      );
       if (response.data.token) {
         localStorage.setItem("authToken", response.data.token);
         localStorage.setItem("RegisterNo", RegisterNo);
         //alert("Login successful!");
         navigate("/cgpa");
       } else {
-        alert(response.data.message); 
+        alert(response.data.message);
       }
     } catch (error) {
       console.error("Error:", error);
