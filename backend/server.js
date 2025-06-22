@@ -8,7 +8,7 @@ const Student = require("./models/Student");
 const app = express();
 app.use(express.json());
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://gpa-cgpa-app.vercel.app"],
+  origin: ["https://gpa-cgpa-app.vercel.app"],
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
 };
