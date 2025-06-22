@@ -25,6 +25,10 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
+app.get("/", (req, res) => {
+  res.send("Backend is live!");
+});
+
 app.post("/login", async (req, res) => {
   const { RegisterNo, RollNo } = req.body;
   try {
