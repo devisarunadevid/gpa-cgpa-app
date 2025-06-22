@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://gpa-cgpa-backends.onrender.com",
+        "https://gpa-cgpa-backends.onrender.com/login",
         {
           RegisterNo,
           RollNo,
