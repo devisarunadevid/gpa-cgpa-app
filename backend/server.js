@@ -31,8 +31,10 @@ app.get("/", (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { RegisterNo, RollNo } = req.body;
+  console.log("Login attempt with:", RegisterNo, RollNo);
   try {
-    const student = await Student.findOne({ RegisterNo });
+    const student = await Student.findOne({ RegisterNo: RegisterNo.trim() });
+    console.log("Student found:", student);
     if (!student) {
       return res.status(404).json({ message: "User not found!" });
     }
