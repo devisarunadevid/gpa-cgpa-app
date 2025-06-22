@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Login from "./Components/Login";
 
-
 function App() {
   const [message, setMessage] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:5000")
+      .get("https://gpa-cgpa-backends.onrender.com")
       .then((response) => setMessage(response.data))
       .catch((error) => console.error(error));
   }, []);
@@ -19,7 +18,6 @@ function App() {
         <Route path="/" element={<Login />}></Route>
         <Route path="/cgpa" element={<Cgpa />}></Route>
       </Routes>
-      <Login />
       <p>Message from Backend: {message}</p>
     </div>
   );
